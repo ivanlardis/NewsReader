@@ -1,0 +1,55 @@
+<android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/news_fragment_swipe_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:background="@android:color/white"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/news_fragment_frame_layout_warning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWarningBG"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/circle_warning_color"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="!"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Ошибка обновления данных"
+                android:textColor="@color/colorWarning"
+                android:textSize="14sp" />
+        </FrameLayout>
+
+
+        <android.support.v7.widget.RecyclerView android:id="@+id/news_fragment_recycler"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

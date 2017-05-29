@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">NewsReader</string>
+    <string name="app_name">ЛаринИванNewsReader</string>
+    <string name="menu_news">Новости</string>
+    <string name="menu_about_app">О приложении</string>
+    <string name="menu_exit">Выход</string>
+
+
 </resources>
