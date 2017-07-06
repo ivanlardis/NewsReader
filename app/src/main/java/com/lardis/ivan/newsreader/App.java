@@ -6,9 +6,6 @@ import android.app.Application;
 
 import timber.log.Timber;
 
-/**
- * Created by black-sony on 25.05.17.
- */
 
 public class App extends Application {
     

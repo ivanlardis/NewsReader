@@ -1,9 +1,9 @@
 package com.lardis.ivan.newsreader.di.model;
 
 
-import com.lardis.ivan.newsreader.data.network.NewsApi;
-import com.lardis.ivan.newsreader.repository.INewsRepository;
-import com.lardis.ivan.newsreader.repository.NewsRepository;
+import com.lardis.ivan.newsreader.data.network.api.LTechApi;
+import com.lardis.ivan.newsreader.data.repository.ILTechRepository;
+import com.lardis.ivan.newsreader.data.repository.LTechRepository;
 
 import javax.inject.Singleton;
 
@@ -16,8 +16,8 @@ public class BusinessLogicModule {
 
     @Provides
     @Singleton
-    public INewsRepository provideLangRepository(NewsApi newsApi) {
-        return new NewsRepository(newsApi);
+    public ILTechRepository provideLTechRepository(LTechApi newsApi) {
+        return new LTechRepository(newsApi);
     }
 
 

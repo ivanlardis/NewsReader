@@ -1,7 +1,7 @@
 package com.lardis.ivan.newsreader.di.component;
 
 import com.lardis.ivan.newsreader.di.model.BusinessLogicModule;
-import com.lardis.ivan.newsreader.presentation.NewsPresenter;
+import com.lardis.ivan.newsreader.presentation.news.LTechNewsPresenter;
 
 import javax.inject.Singleton;
 
@@ -12,7 +12,7 @@ import dagger.Subcomponent;
 @Subcomponent(modules = {BusinessLogicModule.class})
 public interface BusinessLogicComponent {
 
-    void inject(NewsPresenter entry);
+    void inject(LTechNewsPresenter entry);
 
 
 }

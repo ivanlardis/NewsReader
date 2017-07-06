@@ -7,27 +7,27 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/news_fragment_item_text_view_origin"
+        android:id="@+id/full_news_fragment_text_view_origin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorOrigin"
         android:textSize="14sp"
-        tools:text="gazeta.ru" />
+        tools:text="sort = 5" />
 
     <TextView
-        android:id="@+id/news_fragment_item_text_view_dateLong"
+        android:id="@+id/full_news_fragment_text_view_dateLong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="3dp"
-        android:layout_toRightOf="@id/news_fragment_item_text_view_origin"
+        android:layout_toRightOf="@id/full_news_fragment_text_view_origin"
         android:textSize="14sp"
         tools:text="- Сегодня" />
 
     <TextView
-        android:id="@+id/news_fragment_item_text_view_title"
+        android:id="@+id/full_news_fragment_text_view_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/news_fragment_item_text_view_origin"
+        android:layout_below="@id/full_news_fragment_text_view_origin"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -36,17 +36,17 @@
     />
 
     <ImageView
-        android:id="@+id/news_fragment_item_image"
+        android:id="@+id/full_news_fragment_image"
         android:layout_width="210dp"
         android:layout_height="140dp"
-        android:layout_below="@id/news_fragment_item_text_view_title"
+        android:layout_below="@id/full_news_fragment_text_view_title"
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:id="@+id/news_fragment_item_text_view_description"
+        android:id="@+id/full_news_fragment_text_view_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/news_fragment_item_image"
+        android:layout_below="@id/full_news_fragment_image"
         android:textColor="@android:color/black"
         tools:text=" Около тысячи человек участвуют в согласованном митинге За права москвичей, который проходит на Суворовской площади в Москве. Об этом сообщает ТАСС со ссылкой на пресс-службу ГУ МВД по столице. " />
 
