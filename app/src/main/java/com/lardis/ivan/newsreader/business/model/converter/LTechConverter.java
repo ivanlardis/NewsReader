@@ -22,15 +22,22 @@ public class LTechConverter {
     public static LTechModel mapItemLTech(LTechModelNW item) {
 
         return new LTechModel(
-                item.getId(),
+                getIntegerOrDie(item.getId()),
                 item.getTitle().trim(),
                 item.getText().trim(),
                 item.getImage(),
-                item.getSort(),
+                getIntegerOrDie( item.getSort()),
                 getDateOrDie(item.getDate())
         );
     }
 
+
+    private static int getIntegerOrDie(Integer integer) {
+        if (integer != null) {
+            return integer;
+        }
+        return 0;
+    }
 
     private static Long getDateOrDie(String date) {
 //

@@ -66,6 +66,8 @@ public class LTechNewsFragment extends MvpAppCompatFragment implements LTechNews
         mRefreshLayout.setOnRefreshListener(() -> mNavigationPresenter.loadData());
         initRecyclerView(view);
         setHasOptionsMenu(true);
+
+        ( getActivity()).setTitle("Ларин Иван reader");
         return view;
     }
 

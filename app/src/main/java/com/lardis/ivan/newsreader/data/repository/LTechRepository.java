@@ -56,6 +56,7 @@ public class LTechRepository implements ILTechRepository {
                         newsBehaviorSubject
                                 .onNext(new ResponseRep<List<LTechModel>>(State.ERROR, null));
                         Log.d(TAG, "onError: " + e.toString());
+                        e.printStackTrace();
                     }
 
                     @Override

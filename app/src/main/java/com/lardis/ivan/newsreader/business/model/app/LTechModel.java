@@ -6,9 +6,9 @@ import android.support.annotation.NonNull;
 
 
 
-public class LTechModel implements Comparable , Parcelable{
+public class LTechModel implements Comparable ,Parcelable   {
 
-    private Integer id;
+    private int id;
 
     private String title;
 
@@ -16,13 +16,13 @@ public class LTechModel implements Comparable , Parcelable{
 
     private String imageUrl;
 
-    private Integer sort;
+    private int sort;
 
-    private Long timestump;
+    private long timestump;
 
-    public LTechModel(final Integer id, final String title, final String text, final String imageUrl,
-            final Integer sort,
-            final Long timestump) {
+    public LTechModel(final int id, final String title, final String text, final String imageUrl,
+            final int sort,
+            final long timestump) {
         this.id = id;
         this.title = title;
         this.text = text;
@@ -37,6 +37,7 @@ public class LTechModel implements Comparable , Parcelable{
         text = in.readString();
         imageUrl = in.readString();
     }
+
 
     public static final Creator<LTechModel> CREATOR = new Creator<LTechModel>() {
         @Override
@@ -104,6 +105,7 @@ public class LTechModel implements Comparable , Parcelable{
         return this.sort-lTechModel.sort;
     }
 
+
     @Override
     public int describeContents() {
         return 0;
@@ -111,8 +113,11 @@ public class LTechModel implements Comparable , Parcelable{
 
     @Override
     public void writeToParcel(final Parcel dest, final int flags) {
+        dest.writeInt(id);
         dest.writeString(title);
         dest.writeString(text);
         dest.writeString(imageUrl);
+        dest.writeInt(sort);
+        dest.writeLong(timestump);
     }
 }
