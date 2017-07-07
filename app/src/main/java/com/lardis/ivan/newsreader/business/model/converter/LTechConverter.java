@@ -17,15 +17,10 @@ public class LTechConverter {
     private static final String TAG = "LTechConverter";
 
 
-    private static DateFormat dateFormat = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
+    private static DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public static LTechModel mapItemLTech(LTechModelNW item) {
-        Log.e(TAG, "mapItemLTech: "+  item.getId()+ "1111");
-        Log.e(TAG, "mapItemLTech: "+  item.getSort()+ "1111");
-        Log.e(TAG, "mapItemLTech: "+  item.getTitle()+ "1111");
-        Log.e(TAG, "mapItemLTech: "+  item.getText()+ "1111");
-        Log.e(TAG, "mapItemLTech: "+  item.getDate()+ "1111");
-        Log.e(TAG, "mapItemLTech: "+  item.getImage()+ "1111");
+
         return new LTechModel(
                 item.getId(),
                 item.getTitle().trim(),
@@ -38,6 +33,8 @@ public class LTechConverter {
 
 
     private static Long getDateOrDie(String date) {
+//
+//        Log.d(TAG, "getDateOrDie: String "+date);
         try {
             return dateFormat.parse(date).getTime();
         } catch (ParseException e) {

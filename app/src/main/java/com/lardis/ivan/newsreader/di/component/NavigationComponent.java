@@ -8,9 +8,6 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 
-/**
- * Created by black-sony on 28.05.17.
- */
 @Singleton
 @Component(modules = {NavigationModule.class})
 public interface NavigationComponent {

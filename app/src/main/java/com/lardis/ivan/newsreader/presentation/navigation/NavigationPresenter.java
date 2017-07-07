@@ -5,9 +5,7 @@ import com.arellomobile.mvp.MvpPresenter;
 
 import ru.terrakok.cicerone.Router;
 
-/**
- * Created by black-sony on 25.05.17.
- */
+
 @InjectViewState
 public class NavigationPresenter extends MvpPresenter<NavigationsView> {
 

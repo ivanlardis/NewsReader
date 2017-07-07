@@ -2,24 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
+    android:layout_margin="16dp">
 
-    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/full_news_fragment_text_view_origin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorOrigin"
-        android:textSize="14sp"
-        tools:text="sort = 5" />
 
     <TextView
         android:id="@+id/full_news_fragment_text_view_dateLong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="3dp"
-        android:layout_toRightOf="@id/full_news_fragment_text_view_origin"
+
         android:textSize="14sp"
         tools:text="- Сегодня" />
 
@@ -27,7 +19,7 @@
         android:id="@+id/full_news_fragment_text_view_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/full_news_fragment_text_view_origin"
+        android:layout_below="@id/full_news_fragment_text_view_dateLong"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:textStyle="bold"

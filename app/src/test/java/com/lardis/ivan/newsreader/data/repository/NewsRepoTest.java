@@ -1,10 +1,7 @@
 package com.lardis.ivan.newsreader.data.repository;
 
 import com.lardis.ivan.newsreader.data.network.api.LTechApi;
-import com.lardis.ivan.newsreader.business.model.network.gazeta.ItemGazeta;
-import com.lardis.ivan.newsreader.business.model.network.gazeta.RssGazeta;
-import com.lardis.ivan.newsreader.business.model.network.lenta.ItemLenta;
-import com.lardis.ivan.newsreader.business.model.network.lenta.RssLenta;
+import com.lardis.ivan.newsreader.data.network.model.LTechModelNW;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,104 +13,70 @@ import org.mockito.runners.MockitoJUnitRunner;
 import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import rx.Observable;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by black-sony on 28.05.17.
- */
+
 @RunWith(MockitoJUnitRunner.class)
 public class NewsRepoTest {
 
     @Mock
     LTechApi mApi;
 
-    NewsRepository newsRepository;
+    LTechRepository newsRepository;
 
-    int countGazeta = 128;
+    int count = 128;
 
-    int countLenta = 126;
 
     @Before
     public void init() {
         MockitoAnnotations.initMocks(this);
 
-        newsRepository = new NewsRepository(mApi);
-        when(mApi.getItemGazeta())
-                .thenReturn(Observable.just(getRssGazeta(countGazeta)));
-        when(mApi.getItemsLenta())
-                .thenReturn(Observable.just(getRssLenta(countLenta)));
+        newsRepository = new LTechRepository(mApi);
+        when(mApi.getLTech())
+                .thenReturn(Observable.just(getTestData(count)));
+
 
     }
 
 
     @Test
-    public void testGetItemGazeta() {
-        newsRepository.getItemGazeta()
-                .toList()
-                .subscribe(newsViewModels -> assertEquals(newsViewModels.size(), countGazeta));
+    public void test () {
+        newsRepository.getItem()
+                           .subscribe(newsViewModels -> assertEquals(newsViewModels.size(), count));
 
     }
 
-    @Test
-    public void testGetItemsLenta() {
 
-        newsRepository.getItemsLenta()
-                .toList()
-                .subscribe(newsViewModels -> assertEquals(newsViewModels.size(), countLenta));
-
-    }
-
-    @Test
-    public void testGetListAllItems() {
-        newsRepository.getListAllItems()
-                .subscribe(newsViewModels -> assertEquals(newsViewModels.size(), countLenta + countGazeta));
-
-    }
 
 
     @NonNull
-    private RssGazeta getRssGazeta(int count) {
-        RssGazeta value = new RssGazeta();
-        ArrayList<ItemGazeta> items = new ArrayList<>();
+    private List<LTechModelNW> getTestData(int count) {
+
+        ArrayList<LTechModelNW> items = new ArrayList<>();
 
         for (int i = 0; i < count; i++) {
 
-            ItemGazeta itemGazeta = new ItemGazeta();
-            itemGazeta.setAuthor("");
-            itemGazeta.setDescription("");
-            itemGazeta.setGuid("");
-            itemGazeta.setLink("");
-            itemGazeta.setPubDate("Sun, 28 May 2017 17:51:00 +0300");
-            itemGazeta.setTitle("");
-            items.add(itemGazeta);
+            LTechModelNW e = new LTechModelNW();
+
+            e.setDate("2016-01-26 09:39:54");
+            e.setId(1);
+            e.setImage("");
+            e.setSort(1);
+            e.setText("");
+            e.setTitle("");
+
+
+            items.add(e);
         }
 
-        value.setItems(items);
-        return value;
+        return items;
     }
 
-    @NonNull
-    private RssLenta getRssLenta(int count) {
-        RssLenta value = new RssLenta();
-        ArrayList<ItemLenta> items = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
 
-            ItemLenta itemLenta = new ItemLenta();
-
-            itemLenta.setDescription("");
-            itemLenta.setGuid("");
-            itemLenta.setLink("");
-            itemLenta.setPubDate("Sun, 28 May 2017 17:51:00 +0300");
-            itemLenta.setTitle("");
-            items.add(itemLenta);
-        }
-
-        value.setItems(items);
-        return value;
-    }
 
 }

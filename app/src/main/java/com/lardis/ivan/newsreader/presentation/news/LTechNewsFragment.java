@@ -27,9 +27,6 @@ import ru.terrakok.cicerone.Router;
 
 import static com.lardis.ivan.newsreader.presentation.navigation.NavigationScreens.FULL_NEWS;
 
-/**
- * Created by black-sony on 25.05.17.
- */
 
 public class LTechNewsFragment extends MvpAppCompatFragment implements LTechNewsView {
 

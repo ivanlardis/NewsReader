@@ -14,9 +14,6 @@ import javax.inject.Inject;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-/**
- * Created by black-sony on 25.05.17.
- */
 
 @InjectViewState
 public class LTechNewsPresenter extends MvpPresenter<LTechNewsView> {

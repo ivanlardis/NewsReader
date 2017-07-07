@@ -2,10 +2,6 @@ package com.lardis.ivan.newsreader.utils;
 
 import android.support.annotation.Nullable;
 
-/**
- * Created by black-sony on 06.07.17.
- */
-
 public class ResponseRep<T> {
 
     private State mState;

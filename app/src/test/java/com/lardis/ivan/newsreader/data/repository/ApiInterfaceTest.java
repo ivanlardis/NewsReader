@@ -2,6 +2,7 @@ package com.lardis.ivan.newsreader.data.repository;
 
 import com.lardis.ivan.newsreader.TestUtils;
 import com.lardis.ivan.newsreader.data.network.api.LTechApi;
+import com.lardis.ivan.newsreader.data.network.model.LTechModelNW;
 import com.lardis.ivan.newsreader.di.DI;
 import com.lardis.ivan.newsreader.di.model.ModelModule;
 
@@ -33,14 +34,9 @@ public class ApiInterfaceTest {
             public MockResponse dispatch(RecordedRequest request) throws InterruptedException {
                 TestUtils testUtils = new TestUtils();
                 System.out.println(request.getPath());
-                if (request.getPath().equals("/export/rss/lenta.xml")) {
-                    return new MockResponse().setResponseCode(200)
-                            .setBody(testUtils.readString("xml/gazeta.xml"));
-                } else if (request.getPath().equals("/rss")) {
-                    return new MockResponse().setResponseCode(200)
-                            .setBody(testUtils.readString("xml/lenta.xml"));
-                }
-                return new MockResponse().setResponseCode(404);
+
+                return new MockResponse().setResponseCode(200)
+                        .setBody(testUtils.readString("gson/test"));
             }
         };
 
@@ -58,10 +54,15 @@ public class ApiInterfaceTest {
     @Test
     public void testGetRepositories() throws Exception {
 
-        apiInterface.getItemsLenta().subscribe(rssLenta ->
+        apiInterface.getLTech().subscribe(lTechModelNWs ->
         {
-            assertEquals(rssLenta.getItems().size(), 200);
-            assertEquals(rssLenta.getItems().get(0).getPubDate(), "Sun, 28 May 2017 18:43:40 +0300");
+
+            for (LTechModelNW lTechModelNW : lTechModelNWs) {
+
+                System.out.println(lTechModelNW.getTitle());
+
+            }
+            assertEquals(lTechModelNWs.size(), 8);
         });
 
 

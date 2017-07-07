@@ -27,7 +27,7 @@ import ru.terrakok.cicerone.Router;
 import ru.terrakok.cicerone.android.SupportFragmentNavigator;
 
 public class NavigationActivity extends MvpAppCompatActivity implements NavigationsView,
-        NavigationView.OnNavigationItemSelectedListener {
+        NavigationView.OnNavigationItemSelectedListener,ToggleView {
 
     private int ITEM_NEWS = 0;
 
@@ -47,6 +47,11 @@ public class NavigationActivity extends MvpAppCompatActivity implements Navigati
     NavigatorHolder navigatorHolder;
 
     @Override
+    public void setToggleAsBack( boolean asBack) {
+        toggle.setDrawerIndicatorEnabled(!asBack);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         DI.getInstance().componentManager().navigationComponent().inject(this);
         super.onCreate(savedInstanceState);
@@ -59,6 +64,9 @@ public class NavigationActivity extends MvpAppCompatActivity implements Navigati
             onNavigationItemSelected(navigationView.getMenu().getItem(ITEM_NEWS));
         }
     }
+
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull final MenuItem item) {

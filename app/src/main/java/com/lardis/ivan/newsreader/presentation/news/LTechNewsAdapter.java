@@ -19,9 +19,6 @@ import java.util.List;
 
 import static com.lardis.ivan.newsreader.R.id.news_fragment_item_text_view_description;
 
-/**
- * Created by i_larin on 26.03.17.
- */
 
 public class LTechNewsAdapter extends RecyclerView.Adapter<LTechNewsAdapter.ViewHolder> {
 
